@@ -18,6 +18,7 @@
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -34,29 +35,26 @@
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
-    <div id="navFlex">
-      <div>
-        <span id='logo'>tweeter</span>
-      </div>
-      <div id="navWrite">
-        <span><b>Write</b> a new tweet</span>
-        <i class="fas fa-angle-double-down"></i>
-      </div>
+    <span id='logo'>tweeter</span>
+    <div id="navWrite">
+      <span><b>Write</b> a new tweet</span>
+      <i class="fas fa-angle-double-down"></i>
     </div>
   </nav>
 
   <header>
-    <div>
+    <div class="profilePic">
       <img src="/images/profile-hex.png">
     </div>
-    <br>
-    <div>
+    <div class="headerName">
       <h2>Leon Zhou</h2>
     </div>
   </header>
 
   <!-- Page-specific (main) content here -->
-  <main class="container"></main>
+  <main class="container">
+  </main>
+
 </body>
 
 </html>
