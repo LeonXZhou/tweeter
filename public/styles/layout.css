@@ -21,13 +21,11 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-#logo{
-  font-family: 'Bungee', cursive;
-}
-body nav {
-  height: 120px;
-  background-color: #4056A1;
-  color: #FFFFFF ;
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
