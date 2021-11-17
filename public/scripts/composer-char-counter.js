@@ -1,4 +1,8 @@
 $(document).ready(function() {
   const tweetText = document.querySelector('#tweet-text');
-  tweetText.addEventListener('input',(event)=>console.log(event))
+  const updateCounter = function(event){
+    console.log(tweetText.value);
+  }
+
+  tweetText.addEventListener('input',updateCounter);
 });
