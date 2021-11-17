@@ -1,0 +1,8 @@
+article.tweets header{
+  display: flex;
+  align-items: center;
+}
+article.tweets img{
+  height:10rem;
+  width:10rem;
+}

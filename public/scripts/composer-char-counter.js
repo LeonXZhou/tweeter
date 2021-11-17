@@ -13,5 +13,5 @@ $(document).ready(function () {
     }
   }
 
-  $('#tweet-text').on('input',null,updateCounter);
+  $('#tweet-text').on('input', null, updateCounter);
 });
