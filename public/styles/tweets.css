@@ -1,11 +1,39 @@
+article{
+  border:solid;
+  padding: 1rem;
+}
+
 article.tweets header{
   display: flex;
   align-items: center;
 }
+article.tweets footer{
+  display: flex;
+  align-items: center;
+}
+
+article.tweets>p{
+  padding-left: 2rem;
+  padding-right : 2rem;
+  padding-bottom: 2rem;
+  border-bottom:solid;
+}
+article.tweets>footer>p{
+  margin-right: auto;
+}
+
+article.tweets>footer{
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
 article.tweets img{
-  height:10rem;
-  width:10rem;
+  height:5rem;
+  width:5rem;
   justify-self:flex-start;
+}
+
+h3.handle{
+  color:rgb(180, 180, 180);
 }
 
 h3.name{
