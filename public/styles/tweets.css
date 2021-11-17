@@ -3,56 +3,56 @@ article{
   padding: 1rem;
   margin: 1rem;
 }
+
 article:hover{
   box-shadow: 10px 10px
 }
 
-
-
-article.tweets header{
+.tweets header{
   display: flex;
   align-items: center;
 }
 
-article.tweets>p{
+.tweets>p{
   padding-left: 2rem;
   padding-right : 2rem;
   padding-bottom: 2rem;
   border-bottom:solid;
 }
 
-article.tweets footer{
+.tweets footer{
   display: flex;
   align-items: center;
   padding-right: 2rem;
   padding-left: 2rem;
 }
 
-article.tweets>footer>i.fas{
+.tweets>footer>i.fas{
   padding-left: .5rem;
   color:#4056A1;
 }
 
-article.tweets>footer>i.fas:hover{
+.tweets>footer>i.fas:hover{
   padding-left: .5rem;
   color: #998c1c;;
 }
 
-article.tweets>footer>p{
+.tweets>footer>p{
   margin-right: auto;
 }
 
-article.tweets img{
+.tweets img{
   height:5rem;
   width:5rem;
+  padding:1rem;
   justify-self:flex-start;
 }
 
-h3.handle{
+.handle{
   color:rgb(180, 180, 180);
 }
 
-h3.name{
+.name{
   margin-right: auto;
 }
 
