@@ -5,4 +5,10 @@ article.tweets header{
 article.tweets img{
   height:10rem;
   width:10rem;
+  justify-self:flex-start;
 }
+
+h3.name{
+  margin-right: auto;
+}
+
