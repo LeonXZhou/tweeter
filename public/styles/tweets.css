@@ -1,13 +1,15 @@
 article{
   border:solid;
   padding: 1rem;
+  margin: 1rem;
+}
+article:hover{
+  box-shadow: 10px 10px
 }
 
+
+
 article.tweets header{
-  display: flex;
-  align-items: center;
-}
-article.tweets footer{
   display: flex;
   align-items: center;
 }
@@ -18,14 +20,28 @@ article.tweets>p{
   padding-bottom: 2rem;
   border-bottom:solid;
 }
+
+article.tweets footer{
+  display: flex;
+  align-items: center;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+article.tweets>footer>i.fas{
+  padding-left: .5rem;
+  color:#4056A1;
+}
+
+article.tweets>footer>i.fas:hover{
+  padding-left: .5rem;
+  color: #998c1c;;
+}
+
 article.tweets>footer>p{
   margin-right: auto;
 }
 
-article.tweets>footer{
-  padding-right: 2rem;
-  padding-left: 2rem;
-}
 article.tweets img{
   height:5rem;
   width:5rem;
@@ -39,4 +55,5 @@ h3.handle{
 h3.name{
   margin-right: auto;
 }
+
 
