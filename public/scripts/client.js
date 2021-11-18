@@ -38,6 +38,14 @@ $(document).ready(function () {
 
   $("form.new-tweet").on("submit", function (event) {
     event.preventDefault();
+    if($('#tweet-text').val().length ===0)
+    {
+      alert('ya need to have something to tweet! about')
+    }
+    if($('#tweet-text').val().length >140)
+    {
+      alert('ya tweet is longer that 140 characters! TLDR BORIIINGGG!')
+    }
     $.ajax({
       url: '/tweets/',
       method: 'POST',
