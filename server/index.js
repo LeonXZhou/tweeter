@@ -10,6 +10,9 @@ const app           = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+// Update the dates for the initial tweets (data-files/initial-tweets.json).
+require("./lib/date-adjust")();
+
 // The in-memory database of tweets. It's a basic object with an array in it.
 const db = require("./lib/in-memory-db");
 
@@ -22,8 +25,6 @@ const db = require("./lib/in-memory-db");
 // require it and pass the `db` parameter immediately:
 const DataHelpers = require("./lib/data-helpers.js")(db);
 
-// Update the dates for the initial tweets (data-files/initial-tweets.json).
-require("./lib/date-adjust")();
 
 // The `tweets-routes` module works similarly: we pass it the `DataHelpers` object
 // so it can define routes that use it to interact with the data layer.

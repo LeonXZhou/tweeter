@@ -1,6 +1,11 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+$(document).ready(function () {
+  $.ajax({ url: '/tweets/', method: 'GET', })
+    .then((results) => {
+      console.log(results)
+    })
+    .catch((error) => {
+      console.log('error:', error);
+    })
 
+  
+});
