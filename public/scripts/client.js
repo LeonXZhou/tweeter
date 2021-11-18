@@ -6,7 +6,8 @@ const createTweetElement = function (singleTweet, parentHTMLElement) {
   $header.append($(`<h3 class="name">${singleTweet.user.name}</h3>`));
   $header.append($(`<h3 class="handle">${singleTweet.user.handle}</h3>`));
 
-  const $body = $(`<p>${singleTweet.content.text}</p>`);
+  const $body = $(`<p></p>`);
+  $body.text(singleTweet.content.text);
 
   const $footer = $('<footer></footer>');
   $footer.append($(`<p>${timeago.format(singleTweet.created_at)}</p>`));
@@ -20,6 +21,14 @@ const createTweetElement = function (singleTweet, parentHTMLElement) {
   parentHTMLElement.prepend($tweetArticle);
 }
 
+/**this function updates the text of the alert class element and displays it using
+ * the jquery css animation .slideDown() function. Called when tweet text length = 0 or > 140
+*/
+const notifyCharacterError = function (alertMessage) {
+  $('.alert').text(alertMessage);
+  $('.alert').hide();
+  $('.alert').slideDown("medium");
+}
 
 
 
@@ -44,15 +53,17 @@ $(document).ready(function () {
 
     //error message if text submission is blank
     if ($('#tweet-text').val().length === 0) {
-      alert('ya need to have something to tweet! about');
+      notifyCharacterError('ya need to have something to tweet! about');
       return;
     }
 
     //error message if text submission is too long
     if ($('#tweet-text').val().length > 140) {
-      alert('ya tweet is longer that 140 characters! TLDR BORIIINGGG!');
+      notifyCharacterError('ya tweet is longer that 140 characters! TLDR BORIIINGGG!');
       return;
     }
+
+    $('.alert').hide(); //hide alert if new tweet is valid
 
     //sents a post request to /tweets/ if no errors were encountered.
     $.ajax({
@@ -64,7 +75,7 @@ $(document).ready(function () {
         $.ajax({ url: '/tweets/', method: 'GET', })
           .then((results) => {
             //only add the newest element therefore we only pass the last element of results to createTweetElement
-            createTweetElement(results[results.length-1], $('section.tweetSection'));
+            createTweetElement(results[results.length - 1], $('section.tweetSection'));
           })
       })
       .catch((error) => {
