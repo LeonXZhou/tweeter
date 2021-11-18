@@ -23,6 +23,8 @@ const createTweetElements = function (tweets, parentHTMLElement) {
 }
 
 
+
+
 $(document).ready(function () {
   /**Sends a GET request to /tweets/ which returns a JSON object 
    * containing all the tweets in that database. The JSON object
@@ -34,23 +36,32 @@ $(document).ready(function () {
     })
     .catch((error) => {
       console.log('error:', error);
-    })
+    });
 
   $("form.new-tweet").on("submit", function (event) {
     event.preventDefault();
-    if($('#tweet-text').val().length ===0)
-    {
-      alert('ya need to have something to tweet! about')
+    if ($('#tweet-text').val().length === 0) {
+      alert('ya need to have something to tweet! about');
+      return;
     }
-    if($('#tweet-text').val().length >140)
-    {
-      alert('ya tweet is longer that 140 characters! TLDR BORIIINGGG!')
+    if ($('#tweet-text').val().length > 140) {
+      alert('ya tweet is longer that 140 characters! TLDR BORIIINGGG!');
+      return;
     }
     $.ajax({
       url: '/tweets/',
       method: 'POST',
       data: $(this).serialize(),
     })
+      .then(() => {
+        $.ajax({ url: '/tweets/', method: 'GET', })
+          .then((results) => {
+            createTweetElements(results, $('section.tweetSection'));
+          })
+      })
+      .catch((error) => {
+        console.log('error:', error);
+      });
   })
 
 });
