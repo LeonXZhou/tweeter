@@ -18,6 +18,7 @@ article:hover{
   padding-right : 2rem;
   padding-bottom: 2rem;
   border-bottom:solid;
+  word-break: break-word;
 }
 
 .tweets footer{
@@ -54,6 +55,11 @@ article:hover{
 
 .name{
   margin-right: auto;
+}
+
+main.container{
+  
+  flex-grow:2;
 }
 
 

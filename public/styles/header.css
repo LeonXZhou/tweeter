@@ -1,13 +1,21 @@
-body>header {
+div>header {
   height: 520px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-image: url('../images/3px-tile.png');
   background-color: #b50042;
   justify-content: flex-start; 
-  padding-top: 120px;
+  padding-top:120px;
+}
+@media screen and (min-width: 1025px){
+  div>header {
+    max-width: 400px;
+    flex-grow:1;
+    min-width:375px;
+    height: 400px;
+    padding-top: 0px;
+  }
 }
 
 .profilePic{

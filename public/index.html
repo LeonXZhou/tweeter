@@ -32,6 +32,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 </head>
 
 <body>
@@ -43,33 +45,34 @@
       <i class="fas fa-angle-double-down"></i>
     </div>
   </nav>
+  <div class = "headertweet">
+    <header>
+      <div class="profilePic">
+        <img src="/images/profile-hex.png">
+      </div>
+      <div class="headerName">
+        <h2>Leon Zhou</h2>
+      </div>
+    </header>
 
-  <header>
-    <div class="profilePic">
-      <img src="/images/profile-hex.png">
-    </div>
-    <div class="headerName">
-      <h2>Leon Zhou</h2>
-    </div>
-  </header>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section>
+        <h2>Compose Tweet</h2>
+        <p class=alert></p>
+        <form class="new-tweet">
+          <textarea name="text" id="tweet-text" placeholder='What are you humming about?'></textarea>
+          <div class="submitCounter">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section>
-      <h2>Compose Tweet</h2>
-      <p class=alert>asdfasdfasf</p>
-      <form class="new-tweet">
-        <textarea name="text" id="tweet-text" placeholder='What are you humming about?'></textarea>
-        <div class="submitCounter">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-
-    <section class="tweetSection">
-    </section>
-  </main>
+      <section class="tweetSection">
+      </section>
+    </main>
+  </div>
 
 </body>
 

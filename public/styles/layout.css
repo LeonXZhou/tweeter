@@ -22,15 +22,25 @@ body {
 }
 
 main {
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 5vw;
+  margin-right: 5vw;
   background-color: #f4f1ec;
 }
 
 section {
-  margin-top: 2.5%;
+  margin-top: 10px;
   margin-bottom: 2.5%;
 }
+
+@media screen and (min-width: 1025px){
+  .headertweet{
+    display:flex;
+    padding-top: 200px;
+    padding-left: 5vw
+  }
+}
+
+
 
 
 /*

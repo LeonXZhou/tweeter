@@ -13,6 +13,15 @@ nav {
   top: 0;
   width: 100%; 
   z-index: 1;
+  background-image: url('../images/3px-tile.png');
+  background-color: #b50042;
+}
+
+@media screen and (min-width: 1025px){
+  nav {
+    background-image: none;
+    background-color: #4056A1;
+  }
 }
 
 nav span{
