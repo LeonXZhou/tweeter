@@ -8,7 +8,7 @@ const createTweetElement = function (tweets, parentHTMLElement) {
     const $body = $(`<p>${singleTweet.content.text}</p>`);
     
     const $footer = $('<footer></footer>');
-    $footer.append($(`<p>${singleTweet.created_at}</p>`));
+    $footer.append($(`<p>${timeago.format(singleTweet.created_at)}</p>`));
     $footer.append($(`<i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i>`))
 
     const $tweetArticle = $('<article class="tweets"></article>');
@@ -24,9 +24,7 @@ const createTweetElement = function (tweets, parentHTMLElement) {
 $(document).ready(function () {
   $.ajax({ url: '/tweets/', method: 'GET', })
     .then((results) => {
-      //const asdf = "https://i.imgur.com/73hZDYK.png"
-      //$('article.tweets').append($(`<img src="${asdf}">`))
-      console.log(results);
+      console.log(results)
       createTweetElement(results, $('section.tweetSection'))
     })
     .catch((error) => {
