@@ -12,6 +12,5 @@ $(document).ready(function () {
       $counter.css('color', 'black');
     }
   }
-
   $('#tweet-text').on('input', null, updateCounter);
 });
