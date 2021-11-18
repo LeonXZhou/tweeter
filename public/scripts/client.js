@@ -3,7 +3,7 @@ const createTweetElement = function (tweets, parentHTMLElement) {
     const $header = $('<header></header>');
     $header.append($(`<img src="${singleTweet.user.avatars}">`));
     $header.append($(`<h3 class="name">${singleTweet.user.name}</h3>`));
-    $header.append($(`<h3 class="name">${singleTweet.user.handle}</h3>`));
+    $header.append($(`<h3 class="handle">${singleTweet.user.handle}</h3>`));
 
     const $body = $(`<p>${singleTweet.content.text}</p>`);
     

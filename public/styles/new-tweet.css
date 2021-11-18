@@ -13,10 +13,6 @@
   position: relative;
 }
 
-form.new-tweet label{
-  position: relative;
-  top: 40px;
-}
 
 .submitCounter{
   padding-top: 10px;
