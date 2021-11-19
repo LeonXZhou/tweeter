@@ -1,6 +1,6 @@
-/**Takes in an array of tweet objects and the parentHTMLElement. tweet objects are converted to 
+/**Takes in an array of tweet objects and the parentHTMLElement. tweet objects are converted to
  * HTML and appended into the partentHTMLElement*/
-const createTweetElement = function (singleTweet, parentHTMLElement) {
+const createTweetElement = function(singleTweet, parentHTMLElement) {
   const $header = $('<header></header>');
   $header.append($(`<img src="${singleTweet.user.avatars}">`));
   $header.append($(`<h3 class="name">${singleTweet.user.name}</h3>`));
@@ -19,23 +19,21 @@ const createTweetElement = function (singleTweet, parentHTMLElement) {
   $tweetArticle.append($footer);
 
   parentHTMLElement.prepend($tweetArticle);
-}
+};
 
 /**this function updates the text of the alert class element and displays it using
  * the jquery css animation .slideDown() function. Called when tweet text length = 0 or > 140
 */
-const notifyCharacterError = function (alertMessage) {
+const notifyCharacterError = function(alertMessage) {
   $('.alert').text(alertMessage);
   $('.alert').hide();
   $('.alert').slideDown("medium");
-}
+};
 
-
-
-$(document).ready(function () {
-  /**Sends a GET request to /tweets/ which returns a JSON object 
+$(document).ready(function() {
+  /**Sends a GET request to /tweets/ which returns a JSON object
    * containing all the tweets in that database. The JSON object
-   * is then passed to the createTweetElements function which 
+   * is then passed to the createTweetElements function which
    * injects the tweets into the DOM*/
   $.ajax({ url: '/tweets/', method: 'GET', })
     .then((results) => {
@@ -48,7 +46,7 @@ $(document).ready(function () {
     });
 
   /**New tweet submission listener */
-  $("form.new-tweet").on("submit", function (event) {
+  $("form.new-tweet").on("submit", function(event) {
     event.preventDefault();
 
     //error message if text submission is blank
@@ -76,11 +74,11 @@ $(document).ready(function () {
           .then((results) => {
             //only add the newest element therefore we only pass the last element of results to createTweetElement
             createTweetElement(results[results.length - 1], $('section.tweetSection'));
-          })
+          });
       })
       .catch((error) => {
         console.log('error:', error);
       });
-  })
+  });
 
 });
