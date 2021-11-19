@@ -2,7 +2,14 @@
 
 Tweeter is a simple, single-page Twitter clone. 
 
-It utilizes the jQuery library along side ajax calls to dynamically update the page. It is responsivley designed for tablet and desktop displays. 
+It utilizes the jQuery library along side ajax calls to dynamically update the page. It is responsivley designed for tablet and desktop displays. Animated alerts for invalid tweet lengths and are implemented using jQuery.
+
+## Screenshots:
+Display when screen width is less than 1024px
+!["Narrow Display"](https://github.com/LeonXZhou/tweeter/blob/master/screenshots/Screenshot%20from%202021-11-18%2018-51-24.png)
+Display when screen width is more than 1024px alongside a sample error message.
+!["Wide display"](https://github.com/LeonXZhou/tweeter/blob/master/screenshots/Screenshot%20from%202021-11-18%2018-53-05.png)
+
 
 ## Getting Started
 
